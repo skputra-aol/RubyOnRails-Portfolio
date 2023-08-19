@@ -1,0 +1,12 @@
+<% @properties.each do |property| %>
+	<div class="col-4">
+		<%= link_to(property_thumbnail(property), property_path(property)) %>
+		<h3 class="h5 mt-3"><%= link_to property.name, property_path(property) %></h3>
+		<p><%= "address 1"  %></p>
+		<div class="amenities mb-5">
+			<span><i data-feather="users" ></i></span>
+			<span><i data-feather="activity" ></i></span>
+			<span><i data-feather="award" ></i></span>
+		</div>	
+	</div>
+<% end %>   

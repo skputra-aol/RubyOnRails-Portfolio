@@ -1,0 +1,13 @@
+<div id="<%= dom_id pin %>" class="imgMedium"> 
+  <p>
+    <strong>Title:</strong>
+    <%= pin.title %>
+  </p>
+  <%= pin.body %>
+  <br/>
+  <%= image_tag pin.image %>
+  <hr/>
+  <% pin.pictures.each do |pict| %>
+  <%= image_tag pict  %>
+  <% end %>
+</div>
