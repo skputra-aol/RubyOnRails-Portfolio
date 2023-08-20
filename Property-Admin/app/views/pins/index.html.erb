@@ -1,14 +1,30 @@
-<p style="color: green"><%= notice %></p>
+<%# <p style="color: green">
+<%= notice %>
+<%#</p> %>
 
-<h1>Pins</h1>
-
-<div id="pins">
+<h1 class="h3">Gallery</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+    <th>Image</th>
+    <th>Title</th>
+    <th>Content</th>
+    </tr>
+  </thead>
+  
+  <tbody>
   <% @pins.each do |pin| %>
-    <%= render pin %>
-    <p>
-      <%= link_to "Show this pin", pin %>
-    </p>
-  <% end %>
-</div>
+    <tr>
+    <td><%= image_tag pin.image, style:"height:120px; width:200px"  %></td>
+    <td><%= pin.title %></td>
+    <td><%= pin.body %></td>
+    <td><%= link_to "Show", pin %></td>
+    <td><%= link_to "Edit", edit_pin_path(pin) %></td>
+    <td><%= link_to "Destroy", pin, method: :delete, data: { confirm: 'Are you sure' } %></td>
+    </tr>
+  <% end %>  
+  </tbody>
+ </table>
 
-<%= link_to "New pin", new_pin_path %>
+
+ <%= link_to 'New Gallery', new_pin_path, class: "btn btn-success" %> 

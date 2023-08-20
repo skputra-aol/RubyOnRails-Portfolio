@@ -2,9 +2,10 @@
 
 <%= render @pin %>
 
-<div>
-  <%= link_to "Edit this pin", edit_pin_path(@pin) %> |
+<div class="form-group mt-4"> 
+
+<%= button_to "Destroy this pin", @pin, method: :delete , class: "btn btn-success"%>
+  <br/>
   <%= link_to "Back to pins", pins_path %>
 
-  <%= button_to "Destroy this pin", @pin, method: :delete %>
 </div>
