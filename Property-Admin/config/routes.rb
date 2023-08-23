@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :vendors
+  resources :registrations
   #resources :properties
   #get 'public/main'
   #devise_for :accounts

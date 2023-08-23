@@ -1,0 +1,47 @@
+<%= form_with(model: registration) do |form| %>
+  <% if registration.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(registration.errors.count, "error") %> prohibited this registration from being saved:</h2>
+
+      <ul>
+        <% registration.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :property_id, style: "display: block" %>
+    <%= form.number_field :property_id %>
+  </div>
+
+  <div>
+    <%= form.label :vendor_id, style: "display: block" %>
+    <%= form.number_field :vendor_id %>
+  </div>
+
+  <div>
+    <%= form.label :pin_id, style: "display: block" %>
+    <%= form.number_field :pin_id %>
+  </div>
+
+  <div>
+    <%= form.label :tag_no, style: "display: block" %>
+    <%= form.text_field :tag_no %>
+  </div>
+
+  <div>
+    <%= form.label :available, style: "display: block" %>
+    <%= form.check_box :available %>
+  </div>
+
+  <div>
+    <%= form.label :note, style: "display: block" %>
+    <%= form.text_field :note %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

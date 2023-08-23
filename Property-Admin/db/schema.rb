@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_13_090031) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_23_155516) do
   create_table "accounts", force: :cascade do |t|
     t.string "first_name", default: "", null: false
     t.string "last_name", default: "", null: false
@@ -89,6 +89,29 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_13_090031) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["account_id"], name: "index_properties_on_account_id"
+  end
+
+  create_table "registrations", force: :cascade do |t|
+    t.integer "property_id"
+    t.integer "vendor_id"
+    t.integer "pin_id"
+    t.string "tag_no"
+    t.boolean "available"
+    t.string "note"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "vendors", force: :cascade do |t|
+    t.integer "refno"
+    t.string "name"
+    t.string "person"
+    t.string "phone"
+    t.string "address"
+    t.boolean "status"
+    t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

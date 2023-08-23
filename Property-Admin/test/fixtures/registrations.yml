@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  property_id: 1
+  vendor_id: 1
+  pin_id: 1
+  tag_no: MyString
+  available: false
+  note: MyString
+
+two:
+  property_id: 1
+  vendor_id: 1
+  pin_id: 1
+  tag_no: MyString
+  available: false
+  note: MyString

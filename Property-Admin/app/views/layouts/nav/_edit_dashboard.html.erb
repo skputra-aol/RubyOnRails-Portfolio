@@ -3,11 +3,11 @@
     end
 %>
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/"><u>Back to HomePage</u></a>
-  <input class="form-control form-control-dark w-100" type="text" placeholder="" aria-label="Search">
-  <ul class="navbar-nav px-3">
+   <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/dashboard"><u>Back to Menu</u></a>
+ <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
       <%= link_to "Log Out", destroy_account_session_path, data: {turbo_method: :delete},  class: "nav-link"  %>
     </li>
   </ul>
 </nav>
+<br/>
