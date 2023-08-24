@@ -7,6 +7,7 @@ class VendorsController < ApplicationController
   def index
     @q = Vendor.ransack(params[:q])
     @vendors = @q.result.page(params[:page])
+    #debugger
   end
 
   # GET /vendors/1 or /vendors/1.json

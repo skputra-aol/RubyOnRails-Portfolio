@@ -1,4 +1,11 @@
 class Vendor < ApplicationRecord
+    validates :refno, :name, :person, :category, presence: true
+    validates :refno, uniqueness: 
+      {message: 'An account associated with %{value} already exists'}
+    validates :phone, length: {in: 7..15}, on: :create
+    validates :address, length: {maximum: 100}
+
+
     enum genre: { company: 1, agent: 2, personal: 3, other: 4 }
 
     def self.ransackable_attributes(auth_object = nil)
@@ -9,4 +16,5 @@ class Vendor < ApplicationRecord
         []
     end
 
+    self.per_page = 5
 end

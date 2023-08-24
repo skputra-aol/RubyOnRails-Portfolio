@@ -25,17 +25,17 @@
       </div>
 
       <div class="form-group">
-        <%= f.select(:category_eq, options_for_select(Vendor.genres.map {|k, v| [k.humanize.capitalize, k.humanize.capitalize]}, f.object.category_eq), { include_blank: false }, {class: "form-control" ,placeholder: "Category"}) %>
+        <%= f.select(:category_eq, options_for_select(Vendor.genres.map {|k, v| [k.humanize.capitalize, k.humanize.capitalize]}, f.object.category_eq), { include_blank: true }, {class: "form-control" ,placeholder: "Category"}) %>
       </div>
 
       <div class="form-group">
-        <%= f.check_box :status_true, include_hidden: false , placeholder: "Status"%>
+        <%= f.check_box :status_true, include_hidden: false , placeholder: "Status", checked: true%>
         <%= f.label :status, 'Active' %>
       </div>
 
       <div class="form-group">
         <div class="float-right">
-          <%= link_to "Clear", request.path, :class => "btn btn-default" %>
+          <%= link_to "Search All", request.path, :class => "btn btn-primary" %>
 
           <%= f.submit class: 'btn btn-primary' %>
         </div>
