@@ -5,7 +5,9 @@ class RegistrationsController < ApplicationController
 
   # GET /registrations or /registrations.json
   def index
-    @q = Registration.ransack(params[:q])
+    @joinData = Registration.joins(:property).joins(:pin).joins(:vendor).select('registrations.id','registrations.tag_no','registrations.property_id','registrations.pin_id','registrations.vendor_id','registrations.note','registrations.available','properties.name as property_name','pins.title as pin_title','vendors.name as vendor_name')
+
+    @q = @joinData.ransack(params[:q])
     @registrations = @q.result.page(params[:page])
     #debugger
   end

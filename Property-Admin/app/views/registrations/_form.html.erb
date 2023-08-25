@@ -11,17 +11,18 @@
 
   <div class="form-group">
     <%= form.label :property_id, style: "display: block" %>
-    <%= form.number_field :property_id, class: "form-control"  %>
+                 <%= form.select(:property_id, options_for_select(Property.all.collect { |v| [ v.name, v.id ] }, form.object.property_id), { include_blank: true, prompt: 'Select Property Name'}, {class: "form-control" ,placeholder: "Property Name"}) %>
   </div>
 
   <div class="form-group">
     <%= form.label :vendor_id, style: "display: block" %>
-    <%= form.number_field :vendor_id, class: "form-control"  %>
+           <%= form.select(:vendor_id, options_for_select(Vendor.all.collect { |v| [ v.name, v.id ] }, form.object.vendor_id), {include_blank: true,prompt: 'Select Vendor Name'}, {class: "form-control" ,placeholder: "Vendor Name"}) %>
   </div>
 
   <div class="form-group">
     <%= form.label :pin_id, style: "display: block" %>
-    <%= form.number_field :pin_id, class: "form-control"  %>
+        <%= form.select(:pin_id, options_for_select(Pin.all.collect { |v| [ v.title, v.id ] }, form.object.pin_id), {include_blank: true,prompt: 'Select Pin Name'}, {class: "form-control" }) %>
+      
   </div>
 
     <div class="form-group">
