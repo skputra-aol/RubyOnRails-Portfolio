@@ -68,8 +68,8 @@ class VendorsController < ApplicationController
     end
 
 
-  ## declare main globar var "@show_sidebar"
-  def set_sidebar
+   ## declare main globar var "@show_sidebar"
+    def set_sidebar
       @show_sidebar = true
     end      
 

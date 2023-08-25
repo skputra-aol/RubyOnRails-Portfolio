@@ -1,7 +1,6 @@
 
-<p id="notice"><%= notice %></p>
 
-<h4 class="text-uppercase ml-2">Vendors</h4>
+<h4 class="text-uppercase ml-3">Vendors</h4>
 
 <div class="row">
   <div class="col-3">
@@ -14,14 +13,13 @@
       <div class="col">
          <%= link_to 'New Vendor', new_vendor_path, class:"btn btn-success" %>
       </div>
-      <div class="col">
-        <%= will_paginate @vendors, list_classes: %w(pagination justify-content-end) %>
-      </div>
+
     </div>
 
     <table class="table table-striped table-hover">
     <thead>
       <tr>
+        <th>ID</th>
         <th><%= sort_link(@q, :refno, "Ref No.") %></td>
         <th><%= sort_link(@q, :name, "Name") %></td>
         <th><%= sort_link(@q, :person, "Person") %></td>
@@ -36,6 +34,7 @@
     <tbody>
       <% @vendors.each do |vendor| %>
         <tr>
+          <td><%= vendor.id %></td>
           <td><%= vendor.refno %></td>
           <td><%= vendor.name %></td>
           <td><%= vendor.person %></td>
@@ -51,11 +50,17 @@
     </tbody>
   </table>
 
-<div class="flickr_pagination">
-    <div class="page_info">
-      <%= page_entries_info @posts %>
-    </div>
-  </div>
+   <div class="row">
+     <div class="flickr_pagination col ml-2">
+         <div class="page_info">
+          <%= page_entries_info @posts %>
+         </div>
+     </div>
+     <div class="col center">
+        <%= will_paginate @registrations, list_classes: %w(pagination justify-content-end) %>
+     </div>
+
+   </div>
 
 
   </div>

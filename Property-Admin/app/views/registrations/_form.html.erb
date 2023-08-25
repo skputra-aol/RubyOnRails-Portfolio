@@ -1,8 +1,6 @@
 <%= form_with(model: registration) do |form| %>
   <% if registration.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(registration.errors.count, "error") %> prohibited this registration from being saved:</h2>
-
       <ul>
         <% registration.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -11,37 +9,39 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="form-group">
     <%= form.label :property_id, style: "display: block" %>
-    <%= form.number_field :property_id %>
+    <%= form.number_field :property_id, class: "form-control"  %>
   </div>
 
-  <div>
+  <div class="form-group">
     <%= form.label :vendor_id, style: "display: block" %>
-    <%= form.number_field :vendor_id %>
+    <%= form.number_field :vendor_id, class: "form-control"  %>
   </div>
 
-  <div>
+  <div class="form-group">
     <%= form.label :pin_id, style: "display: block" %>
-    <%= form.number_field :pin_id %>
+    <%= form.number_field :pin_id, class: "form-control"  %>
   </div>
 
-  <div>
+    <div class="form-group">
     <%= form.label :tag_no, style: "display: block" %>
-    <%= form.text_field :tag_no %>
+    <%= form.text_field :tag_no, class: "form-control"  %>
   </div>
 
-  <div>
-    <%= form.label :available, style: "display: block" %>
-    <%= form.check_box :available %>
-  </div>
-
-  <div>
+      <div class="form-group">
     <%= form.label :note, style: "display: block" %>
-    <%= form.text_field :note %>
+    <%= form.text_field :note, class: "form-control"  %>
   </div>
 
-  <div>
+  <div >
+    <%= form.label :available, style: "display: block" %>
+    <%= form.check_box :available%>
+
+  </div>
+
+
+  <div class="form-group">
     <%= form.submit %>
   </div>
 <% end %>

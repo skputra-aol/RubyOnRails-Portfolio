@@ -4,7 +4,8 @@ class PinsController < ApplicationController
 
   # GET /pins or /pins.json
   def index
-    @pins = Pin.all
+    @pins = Pin.by_recently_created
+    #@pins = Book.by_recently_created.limit(10)
   end
 
   # GET /pins/1 or /pins/1.json

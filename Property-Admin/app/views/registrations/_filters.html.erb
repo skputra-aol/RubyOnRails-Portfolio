@@ -1,0 +1,41 @@
+<div class="card">
+  <div class="card-header">
+    Filters
+  </div>
+  <div class="card-body">
+    <%= search_form_for @q do |f| %>
+      <div class="form-group">
+        <%= f.select(:property_id_eq, options_for_select(Property.all.collect { |v| [ v.name, v.id ] }, f.object.property_id_eq), { include_blank: true, prompt: 'Select Property Name'}, {class: "form-control" ,placeholder: "Property Name"}) %>
+      
+      </div>
+
+      <div class="form-group">
+
+        <%= f.select(:vendor_id_eq, options_for_select(Vendor.all.collect { |v| [ v.name, v.id ] }, f.object.vendor_id_eq), {include_blank: true,prompt: 'Select Vendor Name'}, {class: "form-control" ,placeholder: "Vendor Name"}) %>
+      </div>
+
+      <div class="form-group">
+        <%= f.select(:pin_id_eq, options_for_select(Pin.all.collect { |v| [ v.title, v.id ] }, f.object.pin_id_eq), {include_blank: true,prompt: 'Select Pin Name'}, {class: "form-control" }) %>
+      
+      </div>
+
+       <div class="form-group">
+        <%= f.text_field :tag_no_cont, class: 'form-control', placeholder: "Tag Number"  %>
+      </div>
+
+      <div class="form-group">
+        <%= f.check_box :available_true, include_hidden: false , placeholder: "Available", checked: true%>
+        <%= f.label :available, 'Active' %>
+      </div>
+
+      <div class="form-group">
+        <div class="float-right">
+          <%= link_to "Search All", request.path, :class => "btn btn-primary" %>
+
+          <%= f.submit class: 'btn btn-primary' %>
+        </div>
+      </div>
+
+    <% end %>
+  </div>
+</div>

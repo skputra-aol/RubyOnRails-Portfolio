@@ -6,6 +6,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
+    <th>ID</th>
     <th>Image</th>
     <th>Title</th>
     <th>Content</th>
@@ -15,6 +16,7 @@
   <tbody>
   <% @pins.each do |pin| %>
     <tr>
+    <td><%= pin.id %></td>
     <td><%= image_tag pin.image, style:"height:120px; width:200px"  %></td>
     <td><%= pin.title %></td>
     <td><%= pin.body %></td>

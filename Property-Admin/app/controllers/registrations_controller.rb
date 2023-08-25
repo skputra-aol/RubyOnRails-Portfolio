@@ -1,10 +1,13 @@
 class RegistrationsController < ApplicationController
   before_action :set_registration, only: %i[ show edit update destroy ]
   before_action :set_sidebar
+  before_action :set_sidebar, except: [:index]
 
   # GET /registrations or /registrations.json
   def index
-    @registrations = Registration.all
+    @q = Registration.ransack(params[:q])
+    @registrations = @q.result.page(params[:page])
+    #debugger
   end
 
   # GET /registrations/1 or /registrations/1.json
