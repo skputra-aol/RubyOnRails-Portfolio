@@ -9,6 +9,6 @@ class Pin < ApplicationRecord
 
     scope :long_body_text, ->(length = 50) { where("LENGTH(body) > ?", length) }
 
-	validates :title, :body, :image, presence: true
+	validates :title, :body, presence: true
     validates :body, length: {maximum: 200}
 end

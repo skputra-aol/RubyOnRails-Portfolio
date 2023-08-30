@@ -78,3 +78,10 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+## for spec test
+gem "rspec-rails"
+gem "factory_bot_rails"
+
+## for oop class ::
+#gem 'business_process'

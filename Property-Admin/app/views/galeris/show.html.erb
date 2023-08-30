@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @galeri %>
+
+<div>
+  <%= link_to "Edit this galeri", edit_galeri_path(@galeri) %> |
+  <%= link_to "Back to galeris", galeris_path %>
+
+  <%= button_to "Destroy this galeri", @galeri, method: :delete %>
+</div>

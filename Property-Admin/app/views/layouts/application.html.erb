@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PropertyFinder</title>
+    <title>PropertyBird</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -15,8 +15,8 @@
   <body id="<%= controller.controller_name %>" class="<%= controller.action_name %><%= " show-sidebar" if @show_sidebar.present? %>" >
  
 <%# MasterPage - Header %>
-<% if @show_sidebar.nil? %>
-<%    if controller.controller_name.in?(["properties","registrations","vendors"])%>
+<% if @show_sidebar.nil?  %>
+<%    if (controller.controller_name.in?(["properties","registrations","vendors"]) and controller.class.superclass.controller_path !="devise")%>
           <%= render "layouts/nav/edit_dashboard" %>
 	        <%= yield %>
       <% else %>    

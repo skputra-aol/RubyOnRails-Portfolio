@@ -1,3 +1,5 @@
+require 'active_support/core_ext/date'
+
 class DashboardController < ApplicationController
   before_action :set_sidebar
   

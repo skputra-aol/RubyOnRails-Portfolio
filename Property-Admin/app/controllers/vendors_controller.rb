@@ -5,9 +5,10 @@ class VendorsController < ApplicationController
   
   # GET /vendors or /vendors.json
   def index
-    @q = Vendor.ransack(params[:q])
+
+    @q =  VendorService::QueryVendor.call(params[:q]) 
     @vendors = @q.result.page(params[:page])
-    #debugger
+    
   end
 
   # GET /vendors/1 or /vendors/1.json
@@ -25,7 +26,7 @@ class VendorsController < ApplicationController
 
   # POST /vendors or /vendors.json
   def create
-    @vendor = Vendor.new(vendor_params)
+    @vendor = VendorService::CommandVendor.call(vendor_params)
 
     respond_to do |format|
       if @vendor.save
@@ -64,7 +65,7 @@ class VendorsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_vendor
-      @vendor = Vendor.find(params[:id])
+      @vendor = VendorService::QueryVendor.call(params)   #Vendor.find(params[:id])
     end
 
 

@@ -1,0 +1,2 @@
+module GalerisHelper
+end

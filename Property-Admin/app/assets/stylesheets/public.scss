@@ -5,3 +5,9 @@
 body {
     padding-top: 20px;
 }
+
+a.disabled {
+    pointer-events: none;
+    cursor: default;
+    color: silver;
+  }

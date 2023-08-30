@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_23_155516) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_29_131933) do
   create_table "accounts", force: :cascade do |t|
     t.string "first_name", default: "", null: false
     t.string "last_name", default: "", null: false
@@ -73,6 +73,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_23_155516) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "galeris", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.integer "Account_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["Account_id"], name: "index_galeris_on_Account_id"
+  end
+
   create_table "pins", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
@@ -116,4 +125,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_23_155516) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "galeris", "Accounts"
 end

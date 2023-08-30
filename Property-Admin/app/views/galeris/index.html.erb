@@ -1,0 +1,29 @@
+<h4 class="text-uppercase">Promo Galleries </h4>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+    <th>ID</th>
+    <th>Image</th>
+    <th>Title</th>
+    <th>Content</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+  <% @galeris.each do |galeri| %>
+    <tr>
+    <td><%= galeri.id %></td>
+    <td><%= image_tag url_for(galeri.image), style:"height:120px; width:200px"  %></td>
+    <td><%= galeri.title %></td>
+    <td><%= galeri.content %></td>
+    <td><%= link_to "Show this galeri", galeri %></td>
+    <td><%= link_to "Edit", edit_galeri_path(galeri) %></td>
+    <td><%= link_to "Destroy", galeri, method: :delete, data: { confirm: 'Are you sure' } %></td>
+    </tr>
+  <% end %>  
+  </tbody>
+ </table>
+
+
+<%= link_to "New galeri", new_galeri_path ,class: "btn btn-success" %> 

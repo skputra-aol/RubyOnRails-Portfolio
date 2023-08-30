@@ -1,0 +1,11 @@
+<div id="<%= dom_id galeri %>">
+  <p>
+    <strong>Title:</strong>
+    <%= galeri.title %>
+  </p>
+  <p>
+    <strong>Content:</strong>
+    <%= galeri.content %>
+  </p>
+<%= image_tag(url_for(galeri.image)) if galeri.image.attached? %>
+</div>

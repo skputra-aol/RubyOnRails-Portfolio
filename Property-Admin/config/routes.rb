@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :galeris
   resources :vendors
   resources :registrations
   #resources :properties
