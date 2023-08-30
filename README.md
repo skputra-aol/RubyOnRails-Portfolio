@@ -51,4 +51,7 @@ Vendor Screenshoot
 <br/><br/>
 Promo Galleries Screenshoot
 ![My Image](pictures/promo.png)
+<br/><br/>
+Promo Galleries Screenshoot
+![My Image](pictures/registration.png)
 <br/>
