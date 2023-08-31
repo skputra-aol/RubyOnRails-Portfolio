@@ -4,6 +4,8 @@ class DashboardController < ApplicationController
   before_action :set_sidebar
   
   def index
+    @dashboards =  DashboardService::QueryDashboard.call(params[:q]) 
+    
   end
 
   private
